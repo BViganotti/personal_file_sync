@@ -1,0 +1,558 @@
+:root {
+  /* Dark theme colors */
+  --bg-primary: #2c2c2c;
+  --bg-secondary: #363636;
+  --bg-tertiary: #404040;
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --accent-color: #4a9eff;
+  --hover-color: rgba(255, 255, 255, 0.05);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --base-font-size: 0.9rem;
+  --primary-color: #4a9eff;
+  --primary-hover: #337ab7;
+  --background-color: #2c2c2c;
+  --secondary-background: #363636;
+  --text-color: #e0e0e0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: var(--base-font-size);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1 {
+  color: var(--text-color);
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+h2 {
+  color: var(--text-color);
+  margin: 0 0 0.75rem 0;
+  font-size: 1.2rem;
+}
+
+.directories {
+  background-color: var(--secondary-background);
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.directory-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.directory-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.scan-options {
+  margin-bottom: 0.75rem;
+}
+
+.scan-options label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--base-font-size);
+}
+
+input[type="text"],
+input[type="number"] {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+input[type="number"] {
+  width: 60px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+  background: var(--bg-tertiary);
+}
+
+.days-input {
+  width: 60px !important;
+  text-align: center;
+  color: var(--text-primary) !important;
+  background-color: var(--bg-tertiary) !important;
+  border: 1px solid var(--border-color);
+  font-size: 14px;
+  padding: 8px !important;
+}
+
+.days-label {
+  color: var(--text-primary) !important;
+  font-size: 14px;
+}
+
+.directory-input {
+  color: var(--text-primary) !important;
+  background-color: var(--bg-tertiary) !important;
+  border: 1px solid var(--border-color);
+  width: 100%;
+  font-size: 14px;
+  padding: 8px 12px;
+}
+
+.directory-input-section {
+  background-color: var(--bg-secondary);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.directory-input-section h2 {
+  color: var(--text-primary);
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.directory-input-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.days-input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.directory-path-input {
+  flex: 1;
+}
+
+button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button + .button {
+  margin-left: 8px;
+}
+
+button.primary {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+button.primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.files {
+  background-color: var(--secondary-background);
+  padding: 0.75rem;
+  border-radius: 8px;
+}
+
+.file-tree {
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 0.5rem;
+  max-height: 600px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 4rem;
+}
+
+.file-tree-item {
+  padding: 2px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.file-tree-content {
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.file-tree-content:hover {
+  background-color: var(--hover-color);
+}
+
+.directory-header {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 0;
+  cursor: pointer;
+}
+
+.directory-header:hover {
+  background-color: var(--hover-color);
+  border-radius: 4px;
+}
+
+.directory-icon {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.collapse-arrow {
+  cursor: pointer;
+  padding: 2px;
+}
+
+.collapse-arrow:hover {
+  background-color: var(--hover-color);
+  border-radius: 2px;
+}
+
+.directory-checkbox {
+  margin-right: 4px;
+  cursor: pointer;
+}
+
+.directory-checkbox:indeterminate {
+  opacity: 0.7;
+}
+
+.directory-name {
+  font-weight: 500;
+  color: var(--text-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-count {
+  color: #5f6368;
+  font-size: calc(var(--base-font-size) - 0.1rem);
+  margin-left: 6px;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+}
+
+.file-checkbox {
+  flex: 0 0 auto;
+  margin-right: 6px;
+}
+
+.file-details {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+  gap: 8px;
+}
+
+.file-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.file-info {
+  flex: 0 0 auto;
+  color: #5f6368;
+  font-size: calc(var(--base-font-size) - 0.1rem);
+  margin-left: auto;
+  padding-left: 6px;
+}
+
+.transfer-section {
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: var(--background-color);
+  padding: 1rem;
+  border-radius: 8px;
+  width: 95%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.transfer-form {
+  margin: 0.75rem 0;
+}
+
+.transfer-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.transfer-form input[type="text"] {
+  width: 100%;
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.path-preview {
+  margin-top: 0.35rem;
+  padding: 0.5rem;
+  background-color: var(--secondary-background);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #5f6368;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-height: 100px;
+  overflow-y: auto;
+  font-family: monospace;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.modal-buttons button:disabled {
+  background-color: var(--border-color);
+  cursor: not-allowed;
+}
+
+.modal-buttons button.primary:disabled {
+  background-color: var(--primary-color);
+  opacity: 0.7;
+}
+
+/* Remote path input styles */
+.remote-path-input {
+  color: var(--text-primary) !important;
+  background-color: var(--bg-tertiary) !important;
+  border: 1px solid var(--border-color);
+  width: 100%;
+  font-size: 14px;
+  padding: 8px 12px;
+  margin-top: 4px;
+}
+
+.remote-path-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+/* Transfer dialog label */
+.transfer-dialog label {
+  color: var(--text-primary);
+  font-size: 14px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Example path */
+.example-path {
+  color: var(--text-primary) !important;
+  background-color: var(--bg-tertiary);
+  padding: 8px;
+  border-radius: 4px;
+  margin-top: 8px;
+  font-family: monospace;
+  font-size: 12px;
+  word-break: break-all;
+}
+
+/* Dev environment checkbox group */
+.dev-env-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.dev-env-group label {
+  margin: 0;
+  color: var(--text-primary);
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+  accent-color: var(--primary-color);
+}
+
+/* Directory children animation */
+.directory-children {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.directory-children.expanded {
+  max-height: 1000px;
+}
+
+/* Hover effect for clickable directories */
+.directory-header, .file-tree-content {
+  user-select: none;
+}
+
+/* Fixed transfer button */
+.transfer-button-fixed {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 100;
+}
+
+.transfer-button-fixed button {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+}
+
+/* Status message */
+.status-message {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease-out;
+}
+
+.status-message.success {
+  background-color: #e6f4ea;
+  color: #1e8e3e;
+  border: 1px solid #1e8e3e;
+}
+
+.status-message.error {
+  background-color: #fce8e6;
+  color: #d93025;
+  border: 1px solid #d93025;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+/* Environment toggle */
+.environment-toggle {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background-color: var(--secondary-background);
+  border-radius: 4px;
+}
+
+.environment-toggle label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.help-text {
+  font-size: 0.85rem;
+  color: #5f6368;
+  margin-left: 1.5rem;
+}

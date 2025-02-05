@@ -1,0 +1,10 @@
+{
+    "ssh": {
+        "host": "example.com",
+        "port": 22,
+        "username": "your-username",
+        "keyFile": "/path/to/your/private/key",
+        "knownHostsFile": "~/.ssh/known_hosts",
+        "allowNewHost": true
+    }
+}
