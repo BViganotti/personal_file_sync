@@ -15,10 +15,6 @@ A modern, secure file synchronization tool with a beautiful dark-themed UI. Easi
 - 🔄 Development/Production path transformation
 - 📝 Clear logging and error reporting
 
-## Screenshots
-
-[Add screenshots here]
-
 ## Prerequisites
 
 - Go 1.21 or later
