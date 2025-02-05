@@ -17,7 +17,7 @@ A modern, secure file synchronization tool with a beautiful dark-themed UI. Easi
 
 ## Why
 
-I'm working for big tech and my build VM is far away. Whether it is for updating files or using AI tools the latency is so long that i can drink an espresso between two prompts which i'm not a fan of. I'm also not a fan of modify 150x a day rsync commands or scp this and that so i created this tool to quiet my frustration. It works OK.
+I'm working for big tech company and my build VM is far away. Whether it is for updating files with VSCode remotely or using AI tools the latency is so long that i can drink an espresso between two prompts which i'm not a fan of. I'm also not a fan of modifying 150x a day some rsync commands or scp this and that, so i created this tool to quiet my frustration. Now i have VSCode locally and it a much better experience.
 
 ## Prerequisites
 
