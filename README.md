@@ -15,6 +15,10 @@ A modern, secure file synchronization tool with a beautiful dark-themed UI. Easi
 - 🔄 Development/Production path transformation
 - 📝 Clear logging and error reporting
 
+## Why
+
+I'm working for big tech and my build VM is far away. Whether it is for updating files or using AI tools the latency is so long that i can drink an espresso between two prompts which i'm not a fan of. I'm also not a fan of modify 150x a day rsync commands or scp this and that so i created this tool to quiet my frustration. It works OK.
+
 ## Prerequisites
 
 - Go 1.21 or later
@@ -26,7 +30,7 @@ A modern, secure file synchronization tool with a beautiful dark-themed UI. Easi
 
 1. Clone the repository:
 ```bash
-git clone [your-repo-url]
+git clone https://github.com/BViganotti/personal_file_sync.git
 cd syncing
 ```
 
