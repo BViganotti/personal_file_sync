@@ -2,6 +2,8 @@
 
 A modern, secure file synchronization tool with a beautiful dark-themed UI. Easily sync files between your local machine and remote servers using SSH.
 
+![File Sync Tool Screenshot](docs/images/Screenshot%202025-02-05%20at%2015.27.00.png)
+
 ## Features
 
 - 🎨 Modern dark theme UI with excellent visibility
@@ -101,4 +103,3 @@ Simply enable the development environment checkbox and set your base remote path
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
-
