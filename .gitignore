@@ -50,3 +50,5 @@ config.json
 # Logs
 *.log
 logs/
+
+*.pid

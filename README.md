@@ -17,7 +17,7 @@ A modern, secure file synchronization tool with a beautiful dark-themed UI. Easi
 
 ## Why
 
-I'm working for big tech company and my build VM is far away. Whether it is for updating files with VSCode remotely or using AI tools the latency is so long that i can drink an espresso between two prompts which i'm not a fan of. I'm also not a fan of modifying 150x a day some rsync commands or scp this and that, so i created this tool to quiet my frustration. Now i have VSCode locally and it a much better experience.
+I'm working for big tech company and my work VM is far away. Whether it is for updating files with VSCode remotely or using AI tools the latency is so long that i can drink an espresso between two prompts which i'm not a fan of. I'm also not a fan of modifying 150x a day some rsync commands or scp this and that, so i created this tool to quiet my frustration. Now i can use VSCode locally and its a much better experience.
 
 ## Prerequisites
 
@@ -58,6 +58,26 @@ cp config.template.json config.json
     }
 }
 ```
+
+## Running the Project
+
+The easiest way to run both the frontend and backend is to use the provided script:
+
+```bash
+# Make the script executable (only needed once)
+chmod +x run.sh
+
+# Run both frontend and backend
+./run.sh
+```
+
+The script will:
+- Kill any existing frontend/backend processes if they're running
+- Start the backend server on port 8080
+- Start the frontend development server on port 5173
+- Output the frontend URL for easy access
+
+The script redirects output to `frontend.log` and `backend.log` files for debugging purposes.
 
 ## Usage
 
